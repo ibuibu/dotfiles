@@ -1,0 +1,45 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.focusSideBar",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.terminal.focus",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusFirstEditorGroup",
+    "when": "filesExplorerFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusNextGroup",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.focusFirstEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+[",
+    "command": "editor.emmet.action.balanceOut"
+  },
+  // for sonic pi
+  {
+    "key": "ctrl+alt+r",
+    "command": "workbench.action.tasks.runTask",
+    "args": "sp-run",
+    "when": "editorLangId == ruby" // limit these keybindings to work in ruby files
+  },
+  {
+    "key": "ctrl+alt+s",
+    "command": "workbench.action.tasks.runTask",
+    "args": "sp-stop",
+    "when": "editorLangId == ruby"
+  }
+]
