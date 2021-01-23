@@ -6,6 +6,7 @@ if [ $# -eq 0 ]; then
 fi
 
 cp ../.zshrc ./
+cp -r ../.command ./
 
 git add .
 git commit -m "$@"

@@ -53,7 +53,7 @@ function hssh {
 
 #PATH
 export PATH=$PATH:/Users/hirokiibuka/depot_tools
-export PATH=$PATH:/Users/hirokiibuka/command
+export PATH=$PATH:/Users/hirokiibuka/.command
 
 # go
 export GOROOT=$HOME/go

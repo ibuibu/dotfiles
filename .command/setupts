@@ -1,0 +1,78 @@
+#!/bin/bash
+
+if [ $# != 1 ]; then
+    echo 'The argument must be one (project name)'
+    exit 1
+fi
+
+mkdir $1
+cd $1
+mkdir dist src
+
+npm init --y
+npm i -D webpack webpack-cli typescript ts-loader
+
+git init
+
+num=`grep -n test package.json | sed -e 's/:.*//g'`
+sed -i '' ${num}d package.json
+sed -i '' "${num}i\\
+\ \ \ \ \"watch\": \"webpack -w\"
+" package.json
+sed -i '' "${num}i\\
+\ \ \ \ \"build\": \"webpack\",
+" package.json
+
+cat << EOS > tsconfig.json
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+  }
+}
+EOS
+
+cat << EOS > webpack.config.js
+module.exports = {
+  mode: 'development',
+  entry: './src/main.ts',
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        use: 'ts-loader',
+      },
+    ],
+  },
+  resolve: {
+    extensions: [
+      '.ts', '.js',
+    ],
+  },
+};
+EOS
+
+cat << EOS > .gitignore
+node_modules
+package-lock.json
+EOS
+
+cat << EOS > ./dist/index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="main.js"></script>
+</body>
+</html>
+EOS
+
+cat << EOS > ./src/main.ts
+console.log('Hello world');
+EOS
