@@ -56,13 +56,17 @@ export PATH=$PATH:/Users/hirokiibuka/depot_tools
 export PATH=$PATH:/Users/hirokiibuka/.command
 
 # go
-export GOROOT=$HOME/go
-export PATH=$PATH:$GOROOT/bin
+export GOROOT=/usr/local/Cellar/go/1.15.7/libexec
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 
 # rbenv
 [[ -d ~/.rbenv  ]] && \
   export PATH=${HOME}/.rbenv/bin:${PATH} && \
   eval "$(rbenv init -)"
+
+# gh-cli
+eval "$(gh completion -s zsh)"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/hirokiibuka/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/hirokiibuka/google-cloud-sdk/path.zsh.inc'; fi
