@@ -70,12 +70,13 @@ eval "$(gh completion -s zsh)"
 
 # ghq alias
 alias g='cd $(ghq root)/$(ghq list | fzf)'
+alias gr='gh repo view -w $(ghq list | fzf | cut -d "/" -f 2,3)'
 
 # githubにリポジトリを作り、ghqで取得、vscodeでひらく
 function ghcr() {
   gh repo create $argv
-  ghq get git@github.com:ibuibu/{$argv[1]}.git
-  code /Users/hirokiibuka/ghq/github.com/ibuibu/{$argv[1]}
+  ghq get $argv[1]
+  code $(ghq list --full-path -e $argv[1])
 }
 
 # The next line updates PATH for the Google Cloud SDK.
