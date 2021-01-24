@@ -105,4 +105,5 @@
     "diffEditor.renderSideBySide": true,
     "python.languageServer": "Microsoft",
     "python.showStartPage": true,
+    "terminal.integrated.fontSize": 14,
 }
