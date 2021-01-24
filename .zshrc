@@ -65,11 +65,18 @@ export PATH=$PATH:$GOPATH/bin
   export PATH=${HOME}/.rbenv/bin:${PATH} && \
   eval "$(rbenv init -)"
 
-# gh-cli 補完
+# gh-cli
 eval "$(gh completion -s zsh)"
 
 # ghq alias
 alias g='cd $(ghq root)/$(ghq list | fzf)'
+
+# githubにリポジトリを作り、ghqで取得、vscodeでひらく
+function ghcr() {
+  gh repo create $argv
+  ghq get git@github.com:ibuibu/{$argv[1]}.git
+  code /Users/hirokiibuka/ghq/github.com/ibuibu/{$argv[1]}
+}
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/hirokiibuka/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/hirokiibuka/google-cloud-sdk/path.zsh.inc'; fi
