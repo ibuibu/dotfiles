@@ -65,8 +65,11 @@ export PATH=$PATH:$GOPATH/bin
   export PATH=${HOME}/.rbenv/bin:${PATH} && \
   eval "$(rbenv init -)"
 
-# gh-cli
+# gh-cli 補完
 eval "$(gh completion -s zsh)"
+
+# ghq alias
+alias g='cd $(ghq root)/$(ghq list | fzf)'
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/hirokiibuka/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/hirokiibuka/google-cloud-sdk/path.zsh.inc'; fi
