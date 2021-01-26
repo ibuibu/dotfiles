@@ -106,4 +106,5 @@
     "python.languageServer": "Microsoft",
     "python.showStartPage": true,
     "terminal.integrated.fontSize": 14,
+    "workbench.colorTheme": "Default Dark+",
 }
