@@ -7,6 +7,7 @@ fi
 bindkey -v
 
 alias relogin='exec $SHELL -l'
+alias c='code .'
 
 # ssh-add
 ssh-add ~/.ssh/key/skyway_sv/new/id_rsa
@@ -87,4 +88,5 @@ if [ -f '/Users/hirokiibuka/google-cloud-sdk/completion.zsh.inc' ]; then . '/Use
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# anyenv
 eval "$(anyenv init -)"
