@@ -54,6 +54,7 @@ nnoremap j gj
 nnoremap k gk
 " シンタックスハイライトの有効化
 syntax enable
+colorscheme molokai
 
 
 " Tab系
