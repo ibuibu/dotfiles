@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cp ~/.zshrc ./
+cp -r ~/.config/nvim ./.config/
 cp ~/Library/Application\ Support/Code/User/settings.json ./.config/Code/User/
 cp ~/Library/Application\ Support/Code/User/keybindings.json ./.config/Code/User/
 cp ~/Library/Application\ Support/Code/User/tasks.json ./.config/Code/User/
