@@ -1,3 +1,10 @@
+#            _
+#    _______| |__  _ __ ___
+#   |_  / __| '_ \| '__/ __|
+#  _ / /\__ \ | | | | | (__
+# (_)___|___/_| |_|_|  \___|
+#
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -8,6 +15,12 @@ bindkey -v
 
 alias relogin='exec $SHELL -l'
 alias c='code .'
+alias ls='exa --icons'
+alias l='exa --icons -1'
+
+# ghq alias
+alias g='cd $(ghq root)/github.com/$(ghq list | cut -d "/" -f 2,3 | sort | fzf)'
+alias gr='gh repo view -w $(ghq list | fzf | cut -d "/" -f 2,3)'
 
 # ssh-add
 ssh-add ~/.ssh/key/skyway_sv/new/id_rsa
@@ -68,10 +81,6 @@ export PATH=$PATH:$GOPATH/bin
 
 # gh-cli
 eval "$(gh completion -s zsh)"
-
-# ghq alias
-alias g='cd $(ghq root)/$(ghq list | fzf)'
-alias gr='gh repo view -w $(ghq list | fzf | cut -d "/" -f 2,3)'
 
 # githubにリポジトリを作り、ghqで取得、vscodeでひらく
 function ghcr() {
