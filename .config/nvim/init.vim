@@ -1,3 +1,10 @@
+"        _
+" __   _(_)_ __ ___  _ __ ___
+" \ \ / / | '_ ` _ \| '__/ __|
+"  \ V /| | | | | | | | | (__
+" (_)_/ |_|_| |_| |_|_|  \___|
+"
+"
 if &compatible
   set nocompatible
 endif
@@ -15,8 +22,15 @@ endif
 filetype plugin indent on
 syntax enable
 
+" もし、未インストールものものがあったらインストール
+if dein#check_install()
+  call dein#install()
+endif
+
 " setting
-"文字コードをUFT-8に設定
+" 起動時の画面を表示しない
+set shortmess+=I
+" 文字コードをUFT-8に設定
 set fenc=utf-8
 " バックアップファイルを作らない
 set nobackup
@@ -54,7 +68,8 @@ nnoremap j gj
 nnoremap k gk
 " シンタックスハイライトの有効化
 syntax enable
-colorscheme molokai
+" colorscheme molokai
+colorscheme hybrid
 
 
 " Tab系
@@ -82,3 +97,4 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
