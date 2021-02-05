@@ -106,5 +106,8 @@
     "python.languageServer": "Microsoft",
     "python.showStartPage": true,
     "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontFamily": "Hack Nerd Font",
     "workbench.colorTheme": "Default Dark+",
+    "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+    "vscode-neovim.neovimInitVimPaths.darwin": "/Users/hirokiibuka/.config/nvim",
 }

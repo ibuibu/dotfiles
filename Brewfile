@@ -38,8 +38,9 @@ brew "gst-plugins-good"
 brew "gst-plugins-ugly"
 brew "haskell-stack"
 brew "jq"
+brew "luajit", args: ["HEAD"]
 brew "maven"
-brew "neovim"
+brew "neovim", args: ["HEAD"]
 brew "ninja"
 brew "nodebrew"
 brew "pipenv"
@@ -47,6 +48,7 @@ brew "pyenv"
 brew "rbenv"
 brew "socat"
 brew "terraform", link: false
+brew "tig"
 brew "tmux"
 brew "tree"
 brew "wget"

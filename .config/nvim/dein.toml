@@ -1,9 +1,11 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
+# ファイルエクスプローラー
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 
+# アイコン表示
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
 
@@ -16,5 +18,26 @@ merged = '0'
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
 
+# git操作
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+
+# タブとステータスバー
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+
+# 括弧を補完
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+# 補完
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+
+# 自動で閉じタグ
+[[plugins]]
+repo = 'alvan/vim-closetag'
+
+# コメント
+[[plugins]]
+repo ='tomtom/tcomment_vim'
