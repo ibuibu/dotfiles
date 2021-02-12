@@ -1,4 +1,5 @@
 acidic9.p5js-snippets
+asvetliakov.vscode-neovim
 bradlc.vscode-tailwindcss
 circledev.glsl-canvas
 CoenraadS.bracket-pair-colorizer-2
@@ -11,12 +12,14 @@ eamodio.gitlens
 esbenp.prettier-vscode
 formulahendry.auto-rename-tag
 formulahendry.code-runner
+GitHub.github-vscode-theme
 golang.go
 hashicorp.terraform
 jpoissonnier.vscode-styled-components
 justusadam.language-haskell
 mhutchie.git-graph
 mrjjot.vscode-glsl-linter
+ms-azuretools.vscode-docker
 ms-python.python
 ms-toolsai.jupyter
 ms-vscode-remote.remote-ssh
@@ -27,6 +30,7 @@ octref.vetur
 oderwat.indent-rainbow
 rebornix.ruby
 ritwickdey.LiveServer
+sdras.night-owl
 shyykoserhiy.vscode-spotify
 slevesque.shader
 stevensona.shader-toy

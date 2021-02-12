@@ -70,7 +70,7 @@ function hssh {
   if [ $# = 3 ]; then
     HOSTNAME="$(hcloud members --cache $1 $2 -g $3 | grep -v 'name\|------' | fzf | awk '{print $1}')"
   elif [ $# = 2 ]; then
-    HOSTNAME="$(hcloud members --cache $1 $2 | fzf | awk '{print $1}')"
+    HOSTNAME="$(hcloud members --cache $1 $2 | grep -v 'name\|------' | fzf | awk '{print $1}')"
   else
     echo "引数は2つか3つにしてYO!!"
     return
@@ -112,3 +112,4 @@ if [ -f '/Users/hirokiibuka/google-cloud-sdk/completion.zsh.inc' ]; then . '/Use
 
 # anyenv
 eval "$(anyenv init -)"
+

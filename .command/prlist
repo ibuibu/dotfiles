@@ -1,0 +1,13 @@
+#!/bin/bash
+
+repos=($(ghq list | sort))
+
+for repo in ${repos[@]}
+do
+  echo "======================"
+  ESC=$(printf '\033')
+  reponame=$(echo ${repo} | cut -d "/" -f 2,3)
+  printf "${ESC}[33m%s${ESC}[m\n" ${reponame}
+  cd $(ghq root)/$repo
+  gh pr list
+done

@@ -1,5 +1,4 @@
 {
-    "window.zoomLevel": 0,
     "editor.fontSize": 16,
     "editor.tabSize": 2,
     "explorer.confirmDragAndDrop": false,
@@ -81,7 +80,7 @@
         "editor.tabCompletion": "onlySnippets",
         "editor.wordBasedSuggestions": false
     },
-    "workbench.iconTheme": "vscode-icons",
+    "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "editor.formatOnSave": true,
@@ -105,9 +104,10 @@
     "diffEditor.renderSideBySide": true,
     "python.languageServer": "Microsoft",
     "python.showStartPage": true,
-    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontSize": 18,
     "terminal.integrated.fontFamily": "Hack Nerd Font",
-    "workbench.colorTheme": "Default Dark+",
     "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
-    "vscode-neovim.neovimInitVimPaths.darwin": "/Users/hirokiibuka/.config/nvim",
+    "vscode-neovim.neovimInitVimPaths.darwin": "/Users/hirokiibuka/.config/nvim/",
+    "window.zoomLevel": -1,
+    "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
 }

@@ -1,3 +1,4 @@
+# プラグインマネージャー
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
@@ -9,11 +10,13 @@ repo = 'scrooloose/nerdtree'
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
 
+# フィジーファインダー
 [[plugins]]
 repo = 'junegunn/fzf'
 build = './install --bin'
 merged = '0'
 
+# フィジーファインダー
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
@@ -38,6 +41,45 @@ repo = 'neoclide/coc.nvim'
 [[plugins]]
 repo = 'alvan/vim-closetag'
 
-# コメント
+# コメントをgcで
 [[plugins]]
-repo ='tomtom/tcomment_vim'
+repo = 'tomtom/tcomment_vim'
+
+# terminalのtoggle
+[[plugins]]
+repo = 'kassio/neoterm'
+
+# 画面サイズの調整
+[[plugins]]
+repo = 'simeji/winresizer'
+hook_add = '''
+  let g:winresizer_start_key = '<C-T>'
+'''
+
+# インデント可視化
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+# カーソル移動を簡便化
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+
+# 括弧を簡便化
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+# スクロールをスムーズに
+[[plugins]]
+repo = 'yuttie/comfortable-motion.vim'
+
+# gitの差分を表示
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+# シンタックスハイライトをより鮮やかに
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+
+# VSCODE風カラースキーム(treesitter対応)
+#[[plugins]]
+#repo = 'christianchiarulli/nvcode-color-schemes.vim'
