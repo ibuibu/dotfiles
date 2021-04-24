@@ -1,8 +1,8 @@
-[[plugins]]
-repo = 'rcmdnk/vim-markdown'
-on_ft = ['md', 'markdown']
+# [[plugins]]
+# repo = 'rcmdnk/vim-markdown'
+# on_ft = ['md', 'markdown']
 
-[[plugins]]
-repo = 'maxmellon/vim-jsx-pretty'
-on_ft = ['javascript', 'javascript.jsx']
+# [[plugins]]
+# repo = 'maxmellon/vim-jsx-pretty'
+# on_ft = ['javascript', 'javascript.jsx']
 

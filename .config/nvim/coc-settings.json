@@ -1,4 +1,7 @@
 {
-  "suggest.noselect": false
+  "suggest.noselect": false,
+  "coc.preferences.formatOnType": true,
+  "snippets.textmateSnippetsRoots": ["~/.config/nvim/vscode-snippets"],
+  "explorer.icon.enableNerdfont": true
 }
 

@@ -2,13 +2,11 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-# ファイルエクスプローラー
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-
 # アイコン表示
+# [[plugins]]
+# repo = 'ryanoasis/vim-devicons'
 [[plugins]]
-repo = 'ryanoasis/vim-devicons'
+repo = 'kyazdani42/nvim-web-devicons'
 
 # フィジーファインダー
 [[plugins]]
@@ -28,10 +26,6 @@ repo = 'tpope/vim-fugitive'
 # タブとステータスバー
 [[plugins]]
 repo = 'vim-airline/vim-airline'
-
-# 括弧を補完
-[[plugins]]
-repo = 'jiangmiao/auto-pairs'
 
 # 補完
 [[plugins]]
@@ -80,6 +74,13 @@ repo = 'airblade/vim-gitgutter'
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
 
-# VSCODE風カラースキーム(treesitter対応)
+# スニペット集
+[[plugins]]
+repo = 'honza/vim-snippets'
+
 #[[plugins]]
-#repo = 'christianchiarulli/nvcode-color-schemes.vim'
+#repo = 'terryma/vim-expand-region'
+
+# タブライン
+[[plugins]]
+repo = 'romgrk/barbar.nvim'

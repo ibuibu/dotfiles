@@ -71,10 +71,24 @@ set incsearch
 set wrapscan
 " 検索語をハイライト表示
 set hlsearch
+
+" 置換をスプリット表示
+set inccommand=split
+
+" 行末までヤンク
+nnoremap Y y$
+
+" ウィンドウ移動
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" ESCじゃなくてjjでノーマルモードへ。そして保存。
+inoremap <silent> jj <ESC>:<C-u>w<CR>
+
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
+:nmap <silent><C-e> :CocCommand explorer<CR>
 nnoremap <ESC><ESC> :nohlsearch<CR>
 
 " バッファ移動
@@ -84,7 +98,16 @@ nnoremap <silent> <C-k> :bnext<CR>
 " Leaderをスペースに
 let mapleader = "\<Space>"
 
+nnoremap [Fzf] <Nop>
+nmap <Leader>f [Fzf]
+nnoremap [Fzf]f :<C-u>Files<CR>
+nnoremap [Fzf]g :<C-u>GFiles<CR>
+nnoremap [Fzf]G :<C-u>GFiles?<CR>
+nnoremap [Fzf]b :<C-u>Buffers<CR>
+nnoremap [Fzf]g :<C-u>GFiles<CR>
+
 " nnoremap <Leader>w :w<CR>
+"
 vmap <Leader>y "+y
 vmap <Leader>d "+d
 nmap <Leader>p "+p
@@ -99,7 +122,7 @@ map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 " ヤンクをクリップボードにコピー
-set clipboard=unnamed
+" set clipboard=unnamed
 
 " for vim-closetag
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.erb,*.php,*.vue,*.jsx,*.tsx,*.js'
@@ -134,10 +157,6 @@ syntax enable
 if dein#check_install()
   call dein#install()
 endif
-
-" call dein#add('christianchiarulli/nvcode-color-schemes.vim')
-" colorscheme nvcode
-
 
 call dein#add('sainnhe/sonokai')
 if has('termguicolors')
@@ -239,8 +258,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -318,6 +337,8 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " Resume latest coc list.
 " nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+let g:coc_global_extensions = ['coc-json', 'coc-go', 'coc-tsserver', 'coc-css', 'coc-python', 'coc-explorer', 'coc-html', 'coc-pairs', 'coc-prettier', 'coc-snippets']
+
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained",
@@ -327,5 +348,7 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
-" let g:nvcode_termcolors=256
+" barbar.nvim(tabline)
+nnoremap <silent> <C-q> :BufferClose<CR>
+
 
