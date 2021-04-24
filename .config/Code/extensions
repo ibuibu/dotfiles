@@ -20,11 +20,13 @@ justusadam.language-haskell
 mhutchie.git-graph
 mrjjot.vscode-glsl-linter
 ms-azuretools.vscode-docker
+ms-dotnettools.csharp
 ms-python.python
 ms-toolsai.jupyter
 ms-vscode-remote.remote-ssh
 ms-vscode-remote.remote-ssh-edit
 ms-vscode.cpptools
+ms-vscode.mono-debug
 msjsdiag.debugger-for-chrome
 octref.vetur
 oderwat.indent-rainbow
@@ -37,6 +39,7 @@ stevensona.shader-toy
 sysoev.language-stylus
 tidalcycles.vscode-tidalcycles
 timonwong.shellcheck
+Unity.unity-debug
 VisualStudioExptTeam.vscodeintellicode
 vscode-icons-team.vscode-icons
 vscodevim.vim

@@ -27,6 +27,39 @@ alias vzsh='nvim ~/.zshrc'
 alias vinit='nvim ~/.config/nvim/init.vim'
 alias vdein='nvim ~/.config/nvim/dein.toml'
 
+## for skyway hcloud shortcut
+function hc() {
+  if [ $# -le 1 -o $# -ge 5 ]; then
+    echo "引数は2〜5つにしてYO"
+    return
+  fi
+
+  case $1 in
+    g) cloud="gcp" ;;
+    e) cloud="ecl" ;;
+    *) echo "Bad cloud name!!" ;;
+  esac
+  case $2 in
+    s) environment="staging" ;;
+    p) environment="production" ;;
+    *) echo "Bad environment name!!" ;;
+  esac
+  
+  cache=''
+  if [ $(echo ${@:$#:1} = 'c') ]; then
+    cache='--cache'
+  fi
+
+  if [ $# = 2 ]; then
+    hcloud members ${cloud} ${environment} -m in_service is_available is_obsoleted ${cache}
+  fi
+
+  if [ $# -ge 3 ]; then
+    hcloud members ${cloud} ${environment} -g $3 -m in_service is_available is_obsoleted ${cache}
+  fi
+}
+
+
 # ghq alias
 alias g='cd $(ghq root)/github.com/$(ghq list | cut -d "/" -f 2,3 | sort | fzf)'
 alias gr='gh repo view -w $(ghq list | fzf | cut -d "/" -f 2,3)'
@@ -50,13 +83,13 @@ setopt pushd_ignore_dups
 function chpwd() { ls -Fa }
 
 # '^' を押すと上のディレクトリに移動する
-function cdup() {
-echo
-cd ..
-zle reset-prompt
-}
-zle -N cdup
-bindkey '\^' cdup
+# function cdup() {
+# echo
+# cd ..
+# zle reset-prompt
+# }
+# zle -N cdup
+# bindkey '\^' cdup
 
 # 入力したコマンドがすでにコマンド履歴に含まれる場合、履歴から古いほうのコマンドを削除する
 # コマンド履歴とは今まで入力したコマンドの一覧のことで、上下キーでたどれる
@@ -68,9 +101,9 @@ alias mkdir='(){mkdir $1;cd $1}'
 #fzfを使ってすぐにssh
 function hssh {
   if [ $# = 3 ]; then
-    HOSTNAME="$(hcloud members --cache $1 $2 -g $3 | grep -v 'name\|------' | fzf | awk '{print $1}')"
+    HOSTNAME="$(hcloud members --cache $1 $2 -g $3 -m in_service is_available| grep -v 'name\|------' | fzf | awk '{print $1}')"
   elif [ $# = 2 ]; then
-    HOSTNAME="$(hcloud members --cache $1 $2 | grep -v 'name\|------' | fzf | awk '{print $1}')"
+    HOSTNAME="$(hcloud members --cache $1 $2 -m in_service is_available | grep -v 'name\|------' | fzf | awk '{print $1}')"
   else
     echo "引数は2つか3つにしてYO!!"
     return
@@ -113,3 +146,4 @@ if [ -f '/Users/hirokiibuka/google-cloud-sdk/completion.zsh.inc' ]; then . '/Use
 # anyenv
 eval "$(anyenv init -)"
 
+RPROMPT="%F{8} %D{%m/%d %H:%M:%S} %f"

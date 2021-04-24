@@ -103,11 +103,18 @@
     "editor.minimap.enabled": false,
     "diffEditor.renderSideBySide": true,
     "python.languageServer": "Microsoft",
-    "python.showStartPage": true,
-    "terminal.integrated.fontSize": 18,
+    "python.showStartPage": false,
+    "terminal.integrated.fontSize": 14,
     "terminal.integrated.fontFamily": "Hack Nerd Font",
     "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
     "vscode-neovim.neovimInitVimPaths.darwin": "/Users/hirokiibuka/.config/nvim/",
-    "window.zoomLevel": -1,
     "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
+    "liveServer.settings.host": "localhost",
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "omnisharp.useGlobalMono": "always",
 }
