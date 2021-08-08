@@ -75,6 +75,9 @@ set hlsearch
 " 置換をスプリット表示
 set inccommand=split
 
+" 行末に自動で改行を挿入しない
+set binary noeol
+
 " 行末までヤンク
 nnoremap Y y$
 
@@ -105,6 +108,7 @@ nnoremap [Fzf]g :<C-u>GFiles<CR>
 nnoremap [Fzf]G :<C-u>GFiles?<CR>
 nnoremap [Fzf]b :<C-u>Buffers<CR>
 nnoremap [Fzf]g :<C-u>GFiles<CR>
+nnoremap [Fzf]a :<C-u>Ag<CR>
 
 " nnoremap <Leader>w :w<CR>
 "
@@ -337,7 +341,7 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " Resume latest coc list.
 " nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-let g:coc_global_extensions = ['coc-json', 'coc-go', 'coc-tsserver', 'coc-css', 'coc-python', 'coc-explorer', 'coc-html', 'coc-pairs', 'coc-prettier', 'coc-snippets']
+let g:coc_global_extensions = ['coc-json', 'coc-go', 'coc-tsserver', 'coc-css', 'coc-python', 'coc-explorer', 'coc-html', 'coc-pairs', 'coc-prettier', 'coc-snippets', 'coc-rls', 'coc-sql']
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
@@ -351,4 +355,7 @@ EOF
 " barbar.nvim(tabline)
 nnoremap <silent> <C-q> :BufferClose<CR>
 
+
+" formatの設定
+nnoremap ,j :CocCommand prettier.formatFile<CR>
 

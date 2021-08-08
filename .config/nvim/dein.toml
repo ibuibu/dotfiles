@@ -58,6 +58,10 @@ repo = 'Yggdroot/indentLine'
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
 
+# vim-surroundをドットコマンド対応に
+[[plugins]]
+repo = 'tpope/vim-repeat'
+
 # 括弧を簡便化
 [[plugins]]
 repo = 'tpope/vim-surround'
@@ -78,9 +82,13 @@ repo = 'nvim-treesitter/nvim-treesitter'
 [[plugins]]
 repo = 'honza/vim-snippets'
 
-#[[plugins]]
-#repo = 'terryma/vim-expand-region'
+# [[plugins]]
+# repo = 'terryma/vim-expand-region'
 
 # タブライン
 [[plugins]]
 repo = 'romgrk/barbar.nvim'
+
+# rust
+[[plugins]]
+repo = 'rust-lang/rust.vim'
