@@ -1,6 +1,6 @@
 {
     "editor.fontSize": 16,
-    "editor.tabSize": 2,
+    "editor.tabSize": 8,
     "explorer.confirmDragAndDrop": false,
     "files.autoSave": "afterDelay",
     "explorer.confirmDelete": false,
@@ -80,7 +80,7 @@
         "editor.tabCompletion": "onlySnippets",
         "editor.wordBasedSuggestions": false
     },
-    "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
+    "workbench.iconTheme": "vscode-icons",
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "editor.formatOnSave": true,
@@ -110,11 +110,17 @@
     "vscode-neovim.neovimInitVimPaths.darwin": "/Users/hirokiibuka/.config/nvim/",
     "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
     "liveServer.settings.host": "localhost",
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
     "omnisharp.useGlobalMono": "always",
+    "editor.cursorStyle": "line",
+    "editor.insertSpaces": false,
+    "editor.lineNumbers": "on",
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "editor.wordWrap": "off",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "window.zoomLevel": -1,
+    "typescript.updateImportsOnFileMove.enabled": "always",
 }

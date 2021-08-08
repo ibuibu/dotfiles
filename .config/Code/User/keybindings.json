@@ -31,12 +31,12 @@
   },
   {
     "key": "cmd+w",
-    "command":"workbench.action.terminal.kill",
+    "command": "workbench.action.terminal.kill",
     "when": "terminalFocus"
   },
   {
     "key": "ctrl+m",
-    "command":"workbench.action.toggleMaximizedPanel",
+    "command": "workbench.action.toggleMaximizedPanel",
     "when": "terminalFocus"
   },
   // for sonic pi
@@ -51,5 +51,9 @@
     "command": "workbench.action.tasks.runTask",
     "args": "sp-stop",
     "when": "editorLangId == ruby"
+  },
+  {
+    "key": "alt+d",
+    "command": "editor.action.goToDeclaration"
   }
 ]
