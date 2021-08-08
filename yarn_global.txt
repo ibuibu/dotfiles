@@ -1,4 +1,6 @@
 yarn global v1.22.4
+info "create-next-app@11.0.1" has binaries:
+   - create-next-app
 info "create-nuxt-app@3.1.0" has binaries:
    - create-nuxt-app
 info "create-vuepress@0.1.0" has binaries:
@@ -6,4 +8,3 @@ info "create-vuepress@0.1.0" has binaries:
 info "typescript@3.9.6" has binaries:
    - tsc
    - tsserver
-Done in 0.59s.
