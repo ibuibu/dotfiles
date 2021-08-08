@@ -1,0 +1,36 @@
+#!/bin/bash
+
+if [ $# != 1 ]; then
+  echo "引数にターゲットの言語（enかja）を１つ指定しようね"
+  exit 1
+fi
+if [ "${1}" != "en" ] && [ "${1}" != "ja" ]; then
+  echo "引数にターゲットの言語（enかja）を１つ指定しようね"
+  exit 1
+fi
+
+while read line; do
+  if [ "${text}" = "" ]; then
+    text="${line}"
+  else
+  text="${text}
+$line"
+  fi
+
+  if [ "$line" == "" ]; then
+    echo "Now translating..."
+    echo ""
+    break
+  fi
+done
+
+apikey=$(cat ~/credentials/deepl-apikey)
+
+result=$(curl -s https://api-free.deepl.com/v2/translate \
+-d "auth_key=${apikey}" \
+-d "text=${text}" \
+-d "target_lang=${1}" \
+| jq -r '.translations[].text')
+
+echo ${result}
+echo ${result} | pbcopy

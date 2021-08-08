@@ -1,0 +1,21 @@
+#!/bin/bash
+
+##How to Use
+##  hcloud members gcp production -m in_service is_available -o color -c name | . ./eachServer.sh
+
+check=()
+output=()
+
+while read line
+do
+  head5=${line:0:5}
+  if [ ${head5} = '-----' ] || [ ${head5} = 'name' ]; then
+    continue
+  fi
+  if ! `echo ${check[@]} | grep -q ${head5}`; then
+    check=("${check[@]}" ${head5})
+    output=("${output[@]}" ${line})
+  fi
+done
+
+echo ${output[@]}
