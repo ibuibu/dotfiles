@@ -26,6 +26,7 @@ alias v='nvim'
 alias vzsh='nvim ~/.zshrc'
 alias vinit='nvim ~/.config/nvim/init.vim'
 alias vdein='nvim ~/.config/nvim/dein.toml'
+alias gitprune="git branch --merged | grep -v '*' | xargs -I{} git branch -d {} && git fetch --prune"
 
 ## for skyway hcloud shortcut
 function hc() {
@@ -70,6 +71,8 @@ ssh-add ~/.ssh/key/skyway_sv/new/id_rsa
 # 環境変数
 export VISUAL='nvim'
 export EDITOR='nvim'
+
+export PROMPT_EOL_MARK=''
 
 # cd した先のディレクトリをディレクトリスタックに追加する
 # ディレクトリスタックとは今までに行ったディレクトリの履歴のこと
@@ -116,7 +119,7 @@ export PATH=$PATH:/Users/hirokiibuka/depot_tools
 export PATH=$PATH:/Users/hirokiibuka/.command
 
 # go
-export GOROOT=/usr/local/Cellar/go/1.15.7/libexec
+export GOROOT=/usr/local/Cellar/go/1.16.3/libexec
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
